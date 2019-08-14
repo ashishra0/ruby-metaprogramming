@@ -133,7 +133,7 @@ a = MyClass.new
 a.class            # MyClass
 ```
 
-We are initializing a new instance of class Class and assigning it to our constant MyClass.
+We are initializing a new instance of Class class and assigning it to our constant MyClass.
 Ruby interpreter then creates a new class with constant name MyClass.
 
 ```ruby
@@ -145,3 +145,12 @@ Bar = foo
 foo.name          # Bar
 ```
 In short, ruby interpreter will create a new class if it Class.new is assigned to a constant.
+
+```ruby
+class MyClass; end
+foo = MyClass.new
+```
+
+In the above code, foo is an instance of MyClass.
+MyClass is a constant that holds an instance of Class class.
+This means, foo is an instance of an instance of Class class.
