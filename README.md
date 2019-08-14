@@ -20,7 +20,7 @@ That's actually why we can have constructs like this
     end
   end
  ```
- * Top level code also runs within an object
+ * Top level code also runs within an Object
  ```ruby
  def foo
   puts "bar"
@@ -28,13 +28,13 @@ end
 
 puts "My awesome #{foo} app!"
  ```
- What ruby interpreter does is that it evaluates the code within the context of object class instance.
+ What ruby interpreter does is that it evaluates the code within the context of Object class instance.
 
  ```ruby
 puts self         => # main
 puts self.class   => # Object
  ```
- So we can assume that ruby code is evaluated within an object class
+ So we can assume that ruby code is evaluated within an Object class
  
  * Blocks are not objects
  ---
@@ -144,7 +144,7 @@ foo.class         # Class
 Bar = foo
 foo.name          # Bar
 ```
-In short, ruby interpreter will create a new class if it Class.new is assigned to a constant.
+As you can see, you can assign an instance of Class class to any constant (Const = Class.new) and Ruby will treat it as if you were creating a class with that constant name (class Const; end)
 
 ```ruby
 class MyClass; end
@@ -154,3 +154,24 @@ foo = MyClass.new
 In the above code, foo is an instance of MyClass.
 MyClass is a constant that holds an instance of Class class.
 This means, foo is an instance of an instance of Class class.
+
+Class's class is called Eigenclass or Singleton class.
+
+Q. How can we access class' class (eigenclass) ?
+```ruby
+class MyClass
+  class << self
+    def class_method
+      #eigenclass
+    end
+  end
+
+  def self.class_method2
+    #alternative method
+  end
+
+  def MyClass.class_method
+    # Another alternative
+  end
+end
+```
