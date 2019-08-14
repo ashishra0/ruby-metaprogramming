@@ -105,3 +105,33 @@ class MyClass
 end
 ```
 This code is valid ruby code.
+
+### Classes are objects.
+Classes in ruby are objects. In other words, instances of Class class.
+
+We'll take a look at these points
+
+* Eigenclass
+* Singleton class
+* Classes are objects themselves
+
+```ruby
+class MyClass
+end
+
+a = MyClass.new
+puts a.class        # MyClass
+puts MyClass.class  # Class  
+```
+
+```ruby
+MyClass = Class.new
+MyClass.name       # MyCLass
+MyClass.class      # Class
+
+a = MyClass.new
+a.class            # MyClass
+```
+
+We are initializing a new instance of class Class and assigning it to our constant MyClass.
+Ruby interpreter then creates a new class with name MyClass.
