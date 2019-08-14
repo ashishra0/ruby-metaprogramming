@@ -77,3 +77,31 @@ reverse_day( "hello" )    => "olleh"
 reverse_day( 12345 )      => NoMethodError
 ```
 As long as Class A has all the methods that are used in all other methods, there will be no complaints from ruby.
+
+### Runnable code
+Ruby class definitions are just runnable code. It means that you can have logical expressions, other class declarations or method within your class declaration code.
+
+look at this java class definition
+``` java
+class MyClass {
+  private string MyProperty;
+  public string  myMethod() {
+    return myProperty;
+  }
+}
+```
+Now look at ruby class definition, You can run whatever code you want in the class
+
+```ruby 
+class MyClass
+  puts "Code running inside this class"
+
+  2.times { puts "what" }
+
+  def foo
+    "bar"
+  end
+
+end
+```
+This code is valid ruby code.
