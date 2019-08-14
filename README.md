@@ -134,4 +134,14 @@ a.class            # MyClass
 ```
 
 We are initializing a new instance of class Class and assigning it to our constant MyClass.
-Ruby interpreter then creates a new class with name MyClass.
+Ruby interpreter then creates a new class with constant name MyClass.
+
+```ruby
+foo = Class.new
+foo.name          # nil
+foo.class         # Class
+
+Bar = foo
+foo.name          # Bar
+```
+In short, ruby interpreter will create a new class if it Class.new is assigned to a constant.
